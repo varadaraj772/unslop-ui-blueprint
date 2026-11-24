@@ -34,7 +34,7 @@
 
 Treat these libraries and registries as references only: never install packages, pull registry components, or add dependencies without asking and getting explicit confirmation from the user first. Always check what is already installed in the repository before proposing additions:
 
-1. **Icons (`lucide-react`, `@tabler/icons-react`, `@radix-ui/react-icons`):** Reference for standard UI icons (**zero raw `<svg>` tags** in JSX/TSX; confirm package before installing if missing).
+1. **Icons (`lucide-react`, `@tabler/icons-react`, `@radix-ui/react-icons`):** Reference for standard UI icons (**zero raw `<svg>` tags** in JSX/TSX; confirm package before installing if missing). Never use sparkle icons unless explicitly requested, and always pick icons that match the exact context of the word, heading, or action.
 2. **`shadcn/ui` (`https://ui.shadcn.com`):** Reference for accessible primitives (`Button`, `Input`, `Textarea`, `Select`, `Checkbox`, `RadioGroup`, `Switch`, `Calendar`, `Popover`, `Dialog`, `Sheet`, `Tabs`, `Table`, `Form`, `Skeleton`, `Alert`, `Command`, `Carousel`, `DropdownMenu`).
 3. **`Origin UI` (`https://originui.com`):** Reference for form controls, labeled inputs, calendar/date pickers, required-field states, inline validation, search bars, segmented controls, and operational controls.
 4. **`Magic UI` (`https://magicui.design`):** Reference for hero sections, bento grids, marquees, number tickers, shimmer CTAs, and social-proof blocks (`Persuade` mode only).
@@ -128,6 +128,7 @@ Never render distinct domain entities with the same generic card layout:
 - **Border Radius & Z-Index Scale:** Concentric radii (cards/modals > inputs/buttons > small controls) and strict stacking (`base` < `sticky` < `popover/dropdown` < `modal/drawer` < `toast`).
 - **Hard Bans (What Never to Create):**
   - **No Inline `<svg>` Icons & No Custom Reinvention:** Never write raw `<svg>` icon paths or custom-build components (pickers, dialogs, dropdowns, carousels, tabs, drag-and-drop, toasts) when a reference library component exists, and always confirm with the user before installing or pulling from reference registries.
+  - **No Sparkle Icons or Mismatched Icons:** Never use sparkle icons unless explicitly requested, and never place icons that do not match the exact context of the word, label, or action.
   - **No Unnecessary Words or Explanations:** Zero filler sentences, verbose helper text, or redundant descriptions in user-facing UI or developer-facing summaries/comments.
   - **Normal Dash Only (`-`):** Always use standard hyphens (`-`) instead of em dashes or en dashes across UI copy, code comments, and developer responses.
   - **No Decorative Badges or Pulsing "Live" Dots:** Never add decorative pills/badges (`"NEW"`, `"FEATURED"`, `"LIVE"`, `"POPULAR"`) or pulsing/pinging status dots (`animate-ping`) unless backed by real-time state explicitly specified in `./DESIGN.md`.
@@ -141,18 +142,19 @@ Never render distinct domain entities with the same generic card layout:
 1. [ ] Asked clarifying questions on any doubts and received explicit approval before creating `./DESIGN.md` or modifying UI?
 2. [ ] Forked into `./DESIGN.md` with every `TBD` replaced from this repo?
 3. [ ] Confirmed with the user before installing dependencies or pulling components from reference libraries, and used zero raw `<svg>` icons?
-4. [ ] Zero unnecessary user-facing filler copy or verbose developer-facing explanations?
-5. [ ] All placeholders high-contrast (`>= 4.5:1`), paired with `<label>`, and marked with `*` on required fields?
-6. [ ] All date/time fields built with library calendar/popover pickers (no native `type="date"`)?
-7. [ ] Selection controls strictly separated (`Checkbox` for multi-select/consent, `RadioGroup` for 2-5 mutually exclusive choices, `Switch` for instant boolean toggles, `Select`/`Combobox` for 5+ options)?
-8. [ ] Typography hierarchy (`Hero`, `Title`, `Subtitle`, `Body`, `Caption/Meta`, `Label/Action`) matches semantic weight and role?
-9. [ ] Each domain entity uses its own context-appropriate card anatomy rather than a generic card?
-10. [ ] Primary actions surfaced at top level with zero duplicate buttons/blocks?
-11. [ ] Create/Save (`C`) = Green, Update (`U`) = Orange, Delete (`D`) = Red unless overridden?
-12. [ ] Reorderable lists/Kanban use `GripVertical` handles, drop placeholders, optimistic updates, and keyboard/mobile controls?
-13. [ ] Loading states use layout-matched skeletons or stable inline button spinners with `disabled`/`aria-busy`?
-14. [ ] 4-directional padding, section gutters (`px-*`), and top/bottom margins uniform with zero trailing bottom-margin bloat?
-15. [ ] Verified responsive layout, column reflow, touch targets (`>= 40x40px`), and zero horizontal overflow across mobile (`390px`), tablet (`768px`), and desktop (`1280px+`)?
-16. [ ] Decorative badges and pulsing live-indicator dots completely absent?
-17. [ ] Standard hyphens (`-`) used everywhere instead of em dashes or en dashes?
-18. [ ] Build and typecheck pass with zero errors?
+4. [ ] Zero sparkle icons (unless explicitly requested) and every icon matches its exact label/context?
+5. [ ] Zero unnecessary user-facing filler copy or verbose developer-facing explanations?
+6. [ ] All placeholders high-contrast (`>= 4.5:1`), paired with `<label>`, and marked with `*` on required fields?
+7. [ ] All date/time fields built with library calendar/popover pickers (no native `type="date"`)?
+8. [ ] Selection controls strictly separated (`Checkbox` for multi-select/consent, `RadioGroup` for 2-5 mutually exclusive choices, `Switch` for instant boolean toggles, `Select`/`Combobox` for 5+ options)?
+9. [ ] Typography hierarchy (`Hero`, `Title`, `Subtitle`, `Body`, `Caption/Meta`, `Label/Action`) matches semantic weight and role?
+10. [ ] Each domain entity uses its own context-appropriate card anatomy rather than a generic card?
+11. [ ] Primary actions surfaced at top level with zero duplicate buttons/blocks?
+12. [ ] Create/Save (`C`) = Green, Update (`U`) = Orange, Delete (`D`) = Red unless overridden?
+13. [ ] Reorderable lists/Kanban use `GripVertical` handles, drop placeholders, optimistic updates, and keyboard/mobile controls?
+14. [ ] Loading states use layout-matched skeletons or stable inline button spinners with `disabled`/`aria-busy`?
+15. [ ] 4-directional padding, section gutters (`px-*`), and top/bottom margins uniform with zero trailing bottom-margin bloat?
+16. [ ] Verified responsive layout, column reflow, touch targets (`>= 40x40px`), and zero horizontal overflow across mobile (`390px`), tablet (`768px`), and desktop (`1280px+`)?
+17. [ ] Decorative badges and pulsing live-indicator dots completely absent?
+18. [ ] Standard hyphens (`-`) used everywhere instead of em dashes or en dashes?
+19. [ ] Build and typecheck pass with zero errors?

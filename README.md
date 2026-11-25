@@ -26,3 +26,7 @@ unslop-ui-blueprint/
 1. Clone `https://github.com/varadaraj772/unslop-ui-blueprint` into your agent skills directory.
 2. Let the agent inspect the target repository and confirm tokens, dependencies, and `./DESIGN.md` customization with you.
 3. Fork `assets/DESIGN.template.md` into `./DESIGN.md` at the repository root and replace `TBD` slots for the target project (`Persuade` or `Operate`).
+
+## Support
+
+If you find this useful, you can support it at [buymeacoffee.com/varadaraj2f](https://buymeacoffee.com/varadaraj2f).
